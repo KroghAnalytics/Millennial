@@ -1,3 +1,5 @@
+/*
+
 .featured-posts {
   height: 400px;
   margin: 5px 10px 10px;
@@ -27,6 +29,7 @@
 .featured-posts h1 {
   margin: 10px;
 }
+*/ 
 
 /*
   Pagination
@@ -37,6 +40,7 @@
 }
 .pagination a {
   text-decoration: none;
+
 }
 .pagination-button {
   color: #999;
@@ -47,7 +51,8 @@
   display: inline-block;
   font-size: 16px;
   font-weight: bold;
-}
+} 
+
 .pagination-active {
   color: black;
 }
