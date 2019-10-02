@@ -11,6 +11,7 @@ menu:
 # - {name: 'Learning Resources', folder: 'pages', file: 'resources.html'}
 # - {name: 'Sample Posts', folder: 'pages', file: 'sample-posts.html'}
 # - {name: 'Documentation', folder: 'pages', file: 'documentation.html'}
+- {img: 'picture', file: 'favicon.ico'}
 - {name: 'Projects', folder: 'pages', file: 'Projects.html'}
 - {name: 'CV', folder: 'pages', file: 'CV.html'}
 
