@@ -8,7 +8,7 @@
   ". ." 
   "paragraph_front image_Morten_Front";
   grid-gap: 10px;
-padding-top: $header-thickness+80px;
+padding-top: $header-thickness+10px;
 }
 
 .image_Morten_Front {
@@ -16,6 +16,9 @@ padding-top: $header-thickness+80px;
   grid-area: image_Morten_Front;
 }
 
+.paragraph_front {
+  padding-top: $header-thickness+60px;
+}
 .paragraph_front > p {
   font-size: 15px;
   font-family: Avenir LT Std 35 Light;
