@@ -20,8 +20,8 @@
 		<div id="hd">
 			<div class="yui-gc">
 				<div class="yui-u first">
-					<h1>Jonathan Doe</h1>
-					<h2>Web Designer, Director</h2>
+					<h1>Morten Bechmann Krogh</h1>
+					<h2>Master Student in Quantitative Economics</h2>
 				</div>
 
 				<div class="yui-u">
