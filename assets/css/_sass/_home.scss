@@ -6,7 +6,7 @@
   grid-template-rows: 100px 1fr;
   grid-template-areas:
   ". ." 
-  "left_front image_Morten_Front";
+  "paragraph_front image_Morten_Front";
   grid-gap: 10px;
 
 }
@@ -22,10 +22,10 @@
   grid-area: paragraph_front;
 }
 
-.left_front_heading > H1 {
+.paragraph_front > H1 {
   font-size: 76px;
 }
 
-.left_front_heading > H1 {
+.paragraph_front < H6 {
   font-size: 36px;
 }
