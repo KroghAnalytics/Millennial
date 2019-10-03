@@ -6,7 +6,7 @@
   grid-template-rows: 100px 1fr;
   grid-template-areas:
   ". ." 
-  "paragraph_front image_Morten_Front";
+  "left_front image_Morten_Front";
   grid-gap: 10px;
 
 }
@@ -20,4 +20,12 @@
   font-size: 15px;
   font-family: Avenir LT Std 35 Light;
   grid-area: paragraph_front;
+}
+
+.left_front_heading > H1 {
+  font-size: 76px;
+}
+
+.left_front_heading > H1 {
+  font-size: 36px;
 }
