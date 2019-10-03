@@ -13,6 +13,9 @@ padding-top: $header-thickness+10px;
 .image_Morten_Front {
   width: 400px;
   grid-area: image_Morten_Front;
+  background-image: url(../img/morten_krogh.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .paragraph_front {
