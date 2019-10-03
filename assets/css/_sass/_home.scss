@@ -1,4 +1,19 @@
+.container {
+  width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container a {
+  text-decoration: underline;
+}
 
+}
+@media (max-width: $container-width) {
+  .container {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
 .grid {
   display: grid;
