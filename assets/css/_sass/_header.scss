@@ -21,6 +21,7 @@
 }
 
 
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,9 +29,15 @@
   grid-template-areas:
   "site-logo site-title";
   grid-gap: 10px;
-padding-top: $header-thickness+10px;
 }
 
+.site-logo {
+  width: 15px;
+  margin-bottum: 0;
+  margin-top: 0;
+  line-height: 56px;
+  float: left;
+}
 
 .site-title {
   font-size: 26px;
