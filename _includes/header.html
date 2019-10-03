@@ -1,9 +1,15 @@
 <header class="site-header">
   
-
+<div class = "grid">
   <h3 class="site-title">
     <a href="{{ site.github.url }}/">{{ site.title }}</a>
   </h3>
+
+
+    <a class = "site-logo" href="{{ site.github.url }}/">{{ site.title }} <img src="favicon.ico" title="Krogh Analytics Logo" alt="Krogh Analytics"></a>
+
+</div>
+
   <nav class="menu-list">
     {% for item in site.data.settings.menu %}
       <a href="{{ site.github.url }}/{{ item.folder }}/{{ item.file }}" class="menu-link">{{ item.name }}</a>

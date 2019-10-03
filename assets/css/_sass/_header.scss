@@ -11,7 +11,7 @@
       min-height: 56px;
       width: 95vw;
       position: fixed;
-      background-color: black;
+      background-color: white;
       box-shadow: 0 5px 6px -6px #bbb;
       z-index: 100;
   }
@@ -19,6 +19,19 @@
 .site-header a {
   text-decoration: none;
 }
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "site-logo site-title";
+  grid-gap: 10px;
+padding-top: $header-thickness+10px;
+}
+
+
 .site-title {
   font-size: 26px;
   font-family: Avenir LT Std 35 Light Oblique;

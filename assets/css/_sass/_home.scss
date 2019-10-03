@@ -3,9 +3,8 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 500px;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
-  ". ." 
   "paragraph_front image_Morten_Front";
   grid-gap: 10px;
 padding-top: $header-thickness+10px;
@@ -17,7 +16,7 @@ padding-top: $header-thickness+10px;
 }
 
 .paragraph_front {
-  padding-top: $header-thickness+60px;
+  padding-top: $header-thickness+50px;
 }
 .paragraph_front > p {
   font-size: 15px;
