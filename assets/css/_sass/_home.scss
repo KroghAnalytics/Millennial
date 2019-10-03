@@ -16,7 +16,7 @@
   grid-area: image_Morten_Front;
 }
 
-.paragraph_front {
+.paragraph_front > p {
   font-size: 15px;
   font-family: Avenir LT Std 35 Light;
   grid-area: paragraph_front;
@@ -25,10 +25,14 @@ text-aling: center;
 
 .paragraph_front > H1 {
   font-size: 76px;
+  font-family: Avenir LT Std 35 Light;
+  grid-area: paragraph_front;
 text-aling: center;
 }
 
 .paragraph_front > H6 {
+font-family: Avenir LT Std 35 Light;
+  grid-area: paragraph_front;
   font-size: 30px;
   text-aling: center;
 }
