@@ -1,8 +1,3 @@
----
-layout: page
-title: Curriculum Vitae
----
-
 <!DOCTYPE html >
 <html>
 <head>
