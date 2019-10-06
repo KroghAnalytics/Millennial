@@ -12,7 +12,7 @@ menu:
 # - {name: 'Sample Posts', folder: 'pages', file: 'sample-posts.html'}
 # - {name: 'Documentation', folder: 'pages', file: 'documentation.html'}
 - {img: 'picture', file: 'favicon.ico'}
-- {name: 'Projects', folder: 'pages', file: 'Projects.html'}
+- {name: 'Projects', folder: 'pages', file: 'facts.html'}
 - {name: 'CV', folder: 'pages', file: 'CV.html'}
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
