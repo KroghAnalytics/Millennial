@@ -1,31 +1,65 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
 
-{% for post in paginator.posts %}
+<!doctype html>
+<html>
 
-<article>
-  <a href="{{ site.github.url }}{{ post.url }}">
-    <div class="featured-posts" {% if post.image %}style="background-image:url({{ site.github.url }}/assets/img/{{ post.image }})"{% endif %}>
-      <h2><span>{{ post.title }}</span></h2>
-    </div>
-  </a>
-</article>
+{% include head.html %}
 
-{% endfor %}
+<body>
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
+<div class="container">
+  {% include header.html %}
+  <div class = "post-wrapper">
 
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-    {% else %}
-      <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
+<div class = "grid">
+
+
+ <img class="image_Morten_Front" src="../assets/img/morten_krogh.png" alt="Morten Krogh">
+
+
+
+
+<div class="paragraph_front"> 
+
+<H1> ABOUT 
+<H1> KROGH ANALYTICS </H1> 
+</H1>
+
+<H6> Analysing the World </H6>
+
+<p>
+Hi, my name is Morten Krogh, this is my personal webpage.
+</p>
+
+<p> 
+I am Master student in Quantitative Economics at the University of Aarhus. On this webpage I will share some of things I am working upon at the University and also sparetime projects. 
+</p>
+
+​
+
+<p> You might wonder why I am building this site, this is simply due to the fact that I am very passionate about my study as well as developing nice graphs of my analysis to improve procurement of complicated information and analysis to layman. </p>
+
+​
+
+<p> Hope you will enjoy my webpage, otherwise leave a comment for improvements. Thank You! </p>
+
 </div>
+
+</div>
+
+</div>
+
+  {% include footer.html %}
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
