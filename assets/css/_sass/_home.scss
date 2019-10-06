@@ -1,3 +1,24 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "paragraph_front image_Morten_Front";
+  grid-gap: 10px;
+padding-top: $header-thickness+10px;
+}
+
+.image_Morten_Front {
+  width: 600px;
+  grid-area: image_Morten_Front;
+  background-image: url(../img/morten_krogh.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
 .featured-posts {
   height: 400px;
   margin: 5px 10px 10px;
