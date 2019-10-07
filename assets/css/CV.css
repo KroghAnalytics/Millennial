@@ -80,6 +80,12 @@ img.avatar {
 	border-radius: 50%;
 }
 
+.section-title{
+	font-weight: bold;
+	font-size: 18px;
+	border-bottom: 1px solid lightgrey;
+}
+
 .section-skills{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -88,13 +94,41 @@ img.avatar {
 	align-content: center;
 }
 
-.skills-container ul {
-	margin-left: 20px;
-	/* list-style-type: */
+
+
+
+#arrow {
+    border-right:2px solid black;
+    border-bottom:2px solid black;
+    width:10px;
+    height:10px;
+    transform: rotate(-45deg);
+    margin-top:40px;
 }
 
-.section-title{
-	font-weight: bold;
-	font-size: 18px;
-	border-bottom: 1px solid lightgrey;
+
+
+ul li {
+  position: relative;
+	padding-bottom: 10px;
 }
+
+ul {
+  list-style: none;
+}
+
+ul li:before{
+   content: '';
+   position: absolute;
+   border-right:2px solid black;
+   border-bottom:2px solid black;
+   width:10px;
+   height:10px;
+   top: calc(50% - 4px);
+   left: -20px;
+   transform: translateY(-50%) rotate(-45deg);
+}
+
+
+
+
