@@ -86,7 +86,7 @@ img.avatar {
 	border-bottom: 1px solid lightgrey;
 }
 
-.section-skills{
+.skills-container{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 20px; 
