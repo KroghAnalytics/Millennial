@@ -57,6 +57,7 @@ section-top {
 .links {
 	display: flex;
 	margin: 10PX 0 20px 0;
+	flex: 1;
 }
 
 .link-item {
