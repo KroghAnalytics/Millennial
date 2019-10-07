@@ -31,7 +31,7 @@ section-top {
 
 .cv-name {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 4fr;
 	color: #005DBA;
 	font-size: 38px;
 	line-height: 1;
