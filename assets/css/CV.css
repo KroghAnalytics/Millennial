@@ -1,19 +1,13 @@
 .cv-name {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-.my-first-name {
-color: #005DBA;
-font-size: 48px;
-line-height: 1;
-}
-
-.my-last-name {
-	color:	#013F7E;
-	font-size: 48px;
+	color: #005DBA;
+	font-size: 38px;
 	line-height: 1;
 }
+
+
+
 
 a {
 	color: #323232;
