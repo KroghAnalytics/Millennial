@@ -53,6 +53,19 @@ section-top {
 	line-height: 0.5;
 }
 
+
+.links {
+	display: flex;
+	margin: 10PX 0 20px 0;
+}
+
+.link-item {
+	display: flex;
+	align-items: center;
+	flex: 1;
+}
+
+
 section {
 	display: grid;
 	grid-template-columns: 1fr 4fr;
