@@ -14,7 +14,7 @@ title: Curriculum Vitae
 <body>
 
 <div class="CVContainer">
-	<section>
+	<section-top>
 		<div>
 			<div class="cv-name">
 				<div class="my-first-name"> Morten </div>
@@ -47,9 +47,17 @@ title: Curriculum Vitae
 		</div> <!--	ends section left side--> 
 
 		<div>
-			<div> <img src="../asset/img/morten_krogh.png" alt="avatar" class="avatar"></div>
+			<div>
+				<!-- url({{ site.github.url }}/assets/img/{{ post.image }}) 
+				../asset/img/morten_krogh.png-->
+			 <img url({{ site.github.url }}/assets/img/morten_krogh.png) alt="avatar" class="avatar"></div>
 		</div> <!--	ends section righthand side -->
-	</section> <!--	ends section-->
+	</section-top> <!--	ends section-->
+
+
+
+
+
 
 <section>
 	<div class="section-title"> Work Experience </div>
