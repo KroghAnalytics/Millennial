@@ -31,7 +31,8 @@ section-top {
 
 .cv-name {
 	display: flex;
-	margin: 10px 0 20px 0;
+	margin: 10px 10px 20px 0;
+	flex: 1;
 	color: #005DBA;
 	font-size: 38px;
 	line-height: 1;
