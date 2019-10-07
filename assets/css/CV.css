@@ -31,7 +31,7 @@ section-top {
 
 .cv-name {
 	display: flex;
-	margin: 10px 0 20px 0;
+	margin: 10px 0 0 0;
 	flex: 1;
 	color: #000066;
 	font-size: 38px;
@@ -45,6 +45,13 @@ section-top {
 .my-last-name {
 	margin-left: 10px;
 	font-weight: 900;
+}
+
+.my-title {
+	margin: 10px 0 0 0;
+	color: #000066;
+	font-size: 18px;
+	line-height: 0.5;
 }
 
 section {
