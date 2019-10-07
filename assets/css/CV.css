@@ -49,15 +49,15 @@ section-top {
 
 .links {
 	display: flex;
-	/* margin: 10PX 0 20px 0; */
-	flex: justify-content;
+	margin: 10PX 0 20px 0;
+	/*flex: justify-content;*/
 }
 
 .link-item {
 	display: flex;
 	align-items: center;
-	flex: justify-content;
-	font-size: 15px;
+	flex: 1;
+	/*font-size: 15px;*/
 }
 
 
