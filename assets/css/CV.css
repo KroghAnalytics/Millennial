@@ -74,6 +74,10 @@ section:last-child {
 	border-bottom: none;
 }
 
+img.avatar {
+	width: 130px;
+}
+
 .section-title{
 	font-weight: bold;
 	font-size: 18px;
