@@ -31,11 +31,10 @@ section-top {
 
 .cv-name {
 	display: flex;
-	margin: 10px 0 0 0;
 	flex: 1;
 	color: #000066;
 	font-size: 38px;
-	line-height: 1;
+	line-height: 0.8;
 	
 }
 .my-fist-name {
