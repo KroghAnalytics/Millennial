@@ -10,7 +10,7 @@ a {
 	margin: 40px auto;
 	padding: 32px;
 	backgrond: white;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 section-top {
@@ -76,6 +76,8 @@ section:last-child {
 
 img.avatar {
 	width: 130px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	border-radius: 50%;
 }
 
 .section-title{
