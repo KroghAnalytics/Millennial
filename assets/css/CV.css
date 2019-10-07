@@ -71,8 +71,10 @@ img.avatar {
 
 .section-title{
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 25px;
 	border-bottom: 1px solid lightgrey;
+	color: #323232;
+	text-decoration: none;
 }
 
 .skills-container{
