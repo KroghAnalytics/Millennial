@@ -99,11 +99,12 @@ img.avatar {
     margin-top:40px;
 }
 
-
+li {
+	margin: 0 0;
+}
 
 ul li {
   position: relative;
-	padding-bottom: 10px;
 }
 
 ul {
