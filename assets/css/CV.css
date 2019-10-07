@@ -61,18 +61,7 @@ section-top {
 }
 
 
-section {
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	grid-gap: 20px;
-	padding: 24px 0;
-	border-bottom: 1px solid lightgrey;
 
-}
-
-section:last-child {
-	border-bottom: none;
-}
 
 img.avatar {
 	width: 130px;
@@ -89,7 +78,7 @@ img.avatar {
 .skills-container{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	padding-right: 450px;
+	padding-left: 450px;
 	grid-gap: 20px; 
 	margin-bottom: 10px;
     justify-content: center;
@@ -134,5 +123,17 @@ ul li:before{
 }
 
 
+section {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-gap: 20px;
+	padding: 24px 0;
+	border-bottom: 1px solid lightgrey;
+
+}
+
+section:last-child {
+	border-bottom: none;
+}
 
 
