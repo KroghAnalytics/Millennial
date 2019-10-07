@@ -33,16 +33,18 @@ section-top {
 	display: flex;
 	margin: 10px 0 20px 0;
 	flex: 1;
-	color: #005DBA;
+	color: #000066;
 	font-size: 38px;
 	line-height: 1;
 	
 }
 .my-fist-name {
 	text-align: left;
+
 }
 .my-last-name {
 	margin-left: 10px;
+	font-weight: 900;
 }
 
 section {
