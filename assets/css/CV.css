@@ -57,13 +57,13 @@ section-top {
 .links {
 	display: flex;
 	margin: 10PX 0 20px 0;
-	flex: 1;
+	flex: justify-content;
 }
 
 .link-item {
 	display: flex;
 	align-items: center;
-	flex: 1;
+	flex: justify-content;
 }
 
 
