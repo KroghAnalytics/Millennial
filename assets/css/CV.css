@@ -30,12 +30,12 @@ section-top {
 }
 
 .cv-name {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	margin: 10px 0 20px 0;
 	color: #005DBA;
 	font-size: 38px;
 	line-height: 1;
-	grid-gap: 10px;
+	
 }
 .my-fist-name {
 	text-align: left;
