@@ -1,16 +1,9 @@
 
-
-
-
-
 a {
 	color: #323232;
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
-}
 
 .CVContainer {
 	max-width: 960px;
