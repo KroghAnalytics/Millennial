@@ -86,9 +86,7 @@ section-skills{
 	grid-gap: 20px;
 	margin-bottom: 10px;
 	border-right: 1px solid black;
-}
-section-skills:last-child {
-	border-right: none;
+	align-items: center;
 }
 
 .section-title{
