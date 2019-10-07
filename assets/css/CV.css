@@ -6,3 +6,42 @@
 .my-first-name {
 color: #005DBA;
 }
+
+.my-last-name {
+	color:	#013F7E;
+}
+
+a {
+	color: #323232;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.container {
+	max-width: 960px;
+	margin: 40px auto;
+	padding: 32px;
+	backgrond: white;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+}
+
+section {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-gap: 20px;
+	padding: 24px 0;
+	border-bottom: 1px solid lightgrey;
+
+}
+
+section:last-child {
+	border-bottom: none;
+}
+
+.section-title{
+	font-weight: bold;
+	font-size: 18px;
+}
