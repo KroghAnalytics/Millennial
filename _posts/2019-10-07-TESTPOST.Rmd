@@ -2,6 +2,9 @@
 title: "TEST RMD POST"
 author: "Morten Krogh"
 date: "10/7/2019"
+categories: post
+tags: [post]
+image: morten_krogh.png
 output: html_document
 ---
 
