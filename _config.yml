@@ -4,10 +4,11 @@
 paginate:            5
 
 # Build settings
-markdown:            kramdown
+markdown:            redcarpet # kramdown
 highlighter:         rouge
 permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+url:                 https://wwww.kroghanalytics.com
 
 sass:
   sass_dir: assets/css
