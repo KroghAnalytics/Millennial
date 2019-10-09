@@ -1,7 +1,7 @@
 ---
 title: "FE_ex1"
 layout: post
-knitr::opts_chunk$set(fig.path="https://kroghanalytics.com//images/name-of-your-post-")
+knitr::opts_chunk$set(fig.path="https://kroghanalytics.com//assets/img/garch-process")
 ---
 
 
