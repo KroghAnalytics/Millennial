@@ -2,10 +2,10 @@
 title: "FE_ex1"
 layout: post
 categories: post
-knitr::opts_chunk$set(fig.path="https://kroghanalytics.com/_drafts/figure")
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.path="https://kroghanalytics.com//images/garch-process/")
 knitr::opts_chunk$set(echo = TRUE)
 ```
 

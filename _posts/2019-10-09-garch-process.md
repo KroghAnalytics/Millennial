@@ -2,7 +2,6 @@
 title: "FE_ex1"
 layout: post
 categories: post
-knitr::opts_chunk$set(fig.path="https://kroghanalytics.com/_drafts/figure")
 ---
 
 
@@ -32,6 +31,6 @@ summary(cars)
 
 You can also embed plots, for example:
 
-![plot of chunk pressure](figure/pressure-1.png)
+![plot of chunk pressure](https://kroghanalytics.com//images/garch-process/pressure-1.png)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
