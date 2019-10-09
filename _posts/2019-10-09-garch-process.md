@@ -2,8 +2,7 @@
 title: "FE_ex1"
 layout: post
 categories: post
-#knitr::opts_chunk$set(fig.path="https://kroghanalytics.com//figure/garch-process/")
-
+#knitr::opts_chunk$set(fig.path="https://kroghanalytics.com//_drafts/figure/garch-process/")
 ---
 
 

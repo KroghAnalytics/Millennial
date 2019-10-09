@@ -8,7 +8,7 @@ markdown:            kramdown
 highlighter:         rouge
 permalink:           none
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
-url:                 https://www.kroghanalytics.com
+url:                 https://www.kroghanalytics.com #github.io/Millennial
 
 sass:
   sass_dir: assets/css

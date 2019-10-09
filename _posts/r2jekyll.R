@@ -16,10 +16,8 @@ output = paste0(dir, sub('.Rmd', '.md', filename))
 knit(filename, output)
 
 # Copy .png files to the images directory.
-#fromdir = "https://ehenry09.github.io//_drafts/figures"
-fromdir = paste0(getwd(),"/figure")
+fromdir = "https://ehenry09.github.io//images"
 todir = "../images"
-
 
 pics = list.files(fromdir, ".png")
 pics = sapply(pics, function(x) paste(fromdir, x, sep="/"))
