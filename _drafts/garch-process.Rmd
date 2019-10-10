@@ -2,7 +2,7 @@
 title: "First Post"
 layout: post
 categories: post
-image: cuba-1.jpg
+image: garch-process-pressure-1.jpg
 ---
 
 ```{r,  echo=FALSE}
