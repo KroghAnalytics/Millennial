@@ -7,7 +7,7 @@ categories: post
 
 ```{r setup, include=FALSE}
 # knitr::opts_chunk$set(fig.path="https://ehenry09.github.io//images/garch-process/")
-knitr::opts_chunk$set(fig.path='{{ site.url }}/images/garch-process/')
+knitr::opts_chunk$set(fig.path='{{ site.baseurl }}/images/garch-process/')
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
