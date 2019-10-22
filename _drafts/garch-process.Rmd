@@ -1,6 +1,6 @@
 ---
 title: "GARCH Process"
-image: garch-process-unnamed-chunk-3-1.png
+image: garch-process.jpg
 layout: post
 categories: post
 ---

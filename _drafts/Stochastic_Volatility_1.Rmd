@@ -1,6 +1,6 @@
 ---
 title: "Stochastic Volatility"
-image: null
+image: SV_MODEL.jpg
 layout: post
 categories: post
 ---
@@ -107,6 +107,7 @@ SV_sim <- function(iT, dOmega, dPhi, dSigma2) {
 Now we have a function which is able to simulate a SV process, lets take a look at the simulation og 10.000 observations of the process.
 
 ```{r}
+set.seed(1)
 iT      = 10000
 dOmega  = 0.01
 dPhi    = 0.95
@@ -160,4 +161,14 @@ E.sigma_p_sigmaj_s <- function(p, s, j, dAlpha_w, dBeta2_w, dPhi) {
 
 ```
 
+Now that we have written the functions for GMM estimation of the Stochastic Volatility model, we will now use the function for actual estimation upon the data we simulated according to the SV process.
+
+```{r}
+dAlpha_w = dOmega / (1-dPhi)
+dBeta2_w = dOmega^2 / (1-dPhi^2)
+
+
+
+
+```
 
