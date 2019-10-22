@@ -1,0 +1,163 @@
+---
+title: "Stochastic Volatility"
+image: null
+layout: post
+categories: post
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.path='{{ site.baseurl }}/assets/img/Stochastic-Volatility-')
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This post I will simulate a Stochastic Volatility process, and estimate it using General Methods of Moments.
+## The General Methods of Moments in the case of Stocastich Volatility 
+
+Consider the parameterization of the simple log-normal Stochastic Volatility (SV), assuming $\mu = 0$:
+
+$$
+r_t = \sigma_t \mu_t = exp\left( \frac{W_t}{2}\right) \\
+W_t = \omega + \phi W_{t-1} + \eta_{W,t}
+$$
+
+where 
+$$
+ \begin{pmatrix} u_t \\\ \eta_{W,t} \end{pmatrix} \overset{i.i.d.} \sim N\left(\begin{pmatrix}0 \\\ 0\end{pmatrix}, \begin{pmatrix}1 & 0\\\ 0 & \sigma_{\eta_W}^2\end{pmatrix} \right)
+$$
+
+Also in this case $\theta = \left(\omega, \phi, \sigma_{\eta_{W}} \right)$. 
+According to this model $r_t$ is stationary, and unconditional moments of all orders exist.
+
+Andersen and Sørensen (1996) surveyed the GMM estimation of the Stochastic Volatility model. They recommend using moment condiitons for GMM estimation based on lower order moments of $r_t$, due to the higer-order moments tend to exhibit erratic finite sample behavior.
+They consider a GMM estimation based on subsets of 24 moments considered by Jacquier (1994). In order to describe these moments we need to first define:
+
+$$ 
+\alpha_W = \frac{\omega}{1-\phi} \\ 
+\beta_w^2 = \frac{\sigma_{\eta_W}^2}{1-\phi^2}$$
+
+
+
+The moments conditions, which follow from properties of the log-normal distribution and Gaussian AR(1) model, are expressed as:
+
+$$ 
+\mathbb{E} \left[ \left| r_t  \right| \right] = \frac{2}{\pi}^{\frac{1}{2}} \mathbb{E}\left[ \sigma_t \right]  \\ 
+\mathbb{E} \left[ r_t^2   \right] =  \mathbb{E} \left[ \sigma_t^2   \right] \\
+\mathbb{E} \left[ \left| r_t^3  \right| \right] = 2 \sqrt{\frac{2}{\pi}}  \mathbb{E}\left[ \sigma_t^3\right] \\
+\mathbb{E} \left[  r_t^4   \right] = 3 \mathbb{E}\left[ \sigma_t^4\right] \\
+\mathbb{E} \left[ \left| r_t r_{t-j}  \right| \right] = \left( \frac{2}{\pi} \right) \mathbb{E} \left[\sigma_t \sigma_{t-j} \right], \qquad j=1:10 \\
+\mathbb{E} \left[  r_t^2 r_{t-j}^2   \right] =  \mathbb{E} \left[\sigma_t^2 \sigma_{t-j}^2 \right], \qquad j=1:10 
+$$
+
+Where for any positive integer $j$, and positive constants $p$ and $s$
+
+$$
+\mathbb{E} \left[ \sigma_t^p \right] = exp \left( \frac{p \alpha_W }{2} + \frac{p^2 \beta_W^2}{8} \right) \\
+\mathbb{E} \left[ \sigma_t^p  \sigma_{t-j}^s\right] = \mathbb{E} \left[ \sigma_t^p \right] \mathbb{E} \left[ \sigma_t^s \right] exp \left(\frac{p s\phi^j\beta_W^2}{4} \right)
+$$
+
+We set $W_t = \left(\mid r_t \mid, r_t^2, \mid r_t^3 \mid, r_t^4, \mid r_t r_{t-1} \mid , \dots , \mid r_t r_{t-10} \mid, r_t^2 r_{t-1}^2, \dots , r_t^2 r_{t-10}^2 \right)^{\prime}$, and define the $24 \times 1$ vector: 
+
+$$
+g(W_t, \theta_W) = \begin{pmatrix} \mid r_t \mid - \frac{2}{\pi}^{\frac{1}{2}} exp\left(\frac{\alpha_W}{2} + \frac{\beta_W^2}{8} \right)  \\\ r_t^2 - \left(\alpha_W + \frac{\beta_W^2}{2} \right) \end{pmatrix} \\\
+\vdots \\\
+r_t^2 r_{t-10}^2 - exp\left( \alpha_W + \frac{\beta_W^2}{2} \right)^2  exp\left( \phi^{10} \beta_w^2\right)
+$$
+
+Then $\mathbb{E} \left[ g\left(W_t, \theta_W \right) \right]=0$ is the population moment condition used for GMM estimation of the model parameters $\theta_W = \left( \alpha_W, \phi, \beta_W^2 \right)$. Since the elements of $W_t$ are serially correlated, the efficient weight matrix $S = avar\left( \sqrt{T} g_T \left(\theta_0 \right) \right) $ must be estimated using an HAC estimator, such as:
+
+$$ 
+S_{HAC} = \hat{\Gamma}_0 \left( \hat{\theta} \right) + 2 \sum_{j=0}^{\infty}k \left( \frac{j}{q \left( j \right)} \right) \left( \hat{\Gamma}_j \left( \hat{\theta} \right) + \hat{\Gamma}_j \left( \hat{\theta} \right) ^{\prime}\right) \\ 
+\hat{\Gamma}_j \left( \hat{\theta} \right)  = \frac{1}{T} \sum_{t=j+1}^T g_t\left(W_t, \hat{\theta}  \right) g_t\left(W_{t-j}, \hat{\theta}  \right)
+$$
+for a proper kernel function $k\left( \cdot \right)$.
+
+
+
+## Simulation
+First we need to simulate the SV Process, so lets write a function which is able to do this.
+
+```{r, include=TRUE}
+
+### Simulate SV data
+SV_sim <- function(iT, dOmega, dPhi, dSigma2) {
+  
+  vY = numeric(iT)
+  vU = rnorm(iT)
+  vW = numeric(iT)
+  
+  vW[1] = rnorm(1, mean = dOmega/(1-dPhi), sd = sqrt(dSigma2/(1-dPhi^2)))
+  
+  for (t in 2:iT) {
+    
+    vW[t] = dOmega + dPhi * vW[t-1] + sqrt(dSigma2) * rnorm(1)
+    
+  }
+
+  
+  vY = exp(vW / 2) *vU
+  
+  return(list(vY = vY, 
+              vW = vW,
+              vSigma = exp(vW / 2)))
+}
+
+
+```
+
+Now we have a function which is able to simulate a SV process, lets take a look at the simulation og 10.000 observations of the process.
+
+```{r}
+iT      = 10000
+dOmega  = 0.01
+dPhi    = 0.95
+dSigma2 = 0.5
+
+lsim    = SV_sim(iT, dOmega, dPhi, dSigma2)
+
+plot.ts(main = "Stochastic Volatility Process", 
+        col = 1,
+        do.call(cbind, lsim))
+```
+
+
+## Estimation
+
+
+$$ \tag{1}
+\mathbb{E} \left[ \sigma_t^p \right] = exp \left( \frac{p \alpha_W }{2} + \frac{p^2 \beta_W^2}{8} \right)
+$$
+
+
+
+```{r}
+# Function used to compute the first p moments
+E.sigma_p <- function(p, dAlpha_w, dBeta2_w) {
+  
+  dE = exp(p * dAlpha_w/2 + p^2 *dBeta2_w/8)
+  
+  return(dE)
+}
+```
+
+$$\tag{2}
+\mathbb{E} \left[ \sigma_t^p  \sigma_{t-j}^s\right] = \mathbb{E} \left[ \sigma_t^p \right] \mathbb{E} \left[ \sigma_t^s \right] exp \left(\frac{p s\phi^j\beta_W^2}{4} \right)
+
+$$
+
+
+```{r}
+
+E.sigma_p_sigmaj_s <- function(p, s, j, dAlpha_w, dBeta2_w, dPhi) {
+  
+  # Use the function above to calculate the first two terms of eq. (2)
+  Esigma_p = E.sigma_p(p, dAlpha_w, dBeta2_w)  # E[sigma_t^p]
+  Esigma_s = E.sigma_p(s, dAlpha_w, dBeta2_w)  # E[sigma_t^s]
+  
+  dE.sigma_p_sigmaj_s = Esigma_p * Esigma_s * exp(p * s *dPhi^j * dBeta2_w/4)
+  
+  return(dE.sigma_p_sigmaj_s)
+}
+
+```
+
+
