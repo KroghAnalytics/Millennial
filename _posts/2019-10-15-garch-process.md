@@ -7,7 +7,7 @@ categories: post
 
 
 
-## $GARC (1,1)$ Simulation
+## GARC (1,1) Simulation
 
 In this first post, I will try to simulate T obsevations from a $GARCH(1,1)$ process.
 
@@ -83,7 +83,7 @@ Below we will try to run our function to simulate the $GARCH (1,1)$ process, we 
 ![plot of chunk unnamed-chunk-3]({{ site.baseurl }}/assets/img/garch-process-unnamed-chunk-3-1.png)
 
 
-## $ARCH(1)$ Estimation
+## ARCH(1) Estimation
 
 In this section we will write a function which is able to estimate an $ARCH(1)$ process. To do this we first need a function for the process' likelihood, this function needs to be evaluated by an optimizer. A choice one has to make then estimating an $ARCH(1)$ model by Maximum Likelihood (as we do), is what to set the time t variance to, we choose to set it to it's unconditional value that is $\sigma_1^2 = \mathbb{E} \left[\sigma_t ^2\right]$.
 
@@ -202,38 +202,12 @@ for (t in T) {
 library(tidyverse)
 ```
 
-```
-## ── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──
-```
-
-```
-## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
-## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
-## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
-## ✔ readr   1.3.1     ✔ forcats 0.4.0
-```
-
-```
-## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-```
 
 ```r
 library(ggplot2)
 library(gridExtra)
 ```
 
-```
-## 
-## Attaching package: 'gridExtra'
-```
-
-```
-## The following object is masked from 'package:dplyr':
-## 
-##     combine
-```
 
 ```r
 # plotting omega density from the correctly specified model
@@ -291,12 +265,8 @@ plot_omega_M = ggplot(long, aes(x=value, group=Var2)) +
 
 # plotting alpha from the misspecified model
 long <- reshape2::melt(Coef[, , 'alpha', 'Misspecified']) %>% transform(Var2 = as.factor(Var2))
-range(Coef)
 ```
 
-```
-## [1] 0.000100 5.103283
-```
 
 ```r
 plot_alpha_M = ggplot(long, aes(x=value, group=Var2)) + 
@@ -314,10 +284,6 @@ plot_alpha_M = ggplot(long, aes(x=value, group=Var2)) +
         panel.border = element_blank())
   
 grid.arrange(plot_alpha_C, plot_omega_C, plot_alpha_M,  plot_omega_M)
-```
-
-```
-## Warning: Removed 1500 rows containing missing values (geom_vline).
 ```
 
 ![plot of chunk unnamed-chunk-7]({{ site.baseurl }}/assets/img/garch-process-unnamed-chunk-7-1.png)
